@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, {useState} from 'react'
 import NoteContext from "./noteContext";
 
 const NoteState= (props)=>{
@@ -113,12 +113,15 @@ const NoteState= (props)=>{
       }
 
       // delete a note
-      const deleteNote= ()=>{
-        
+      const deleteNote= (id)=>{
+        // TODO API CALL
+        console.log("deleting the note with id="+id);
+        const newNotes=notes.filter((note)=>{return note._id !== id});
+        setNotes(newNotes);
       }
 
       // edit a note
-      const editNote= ()=>{
+      const editNote= (id,title,description,tag)=>{
         
       }
     return(
